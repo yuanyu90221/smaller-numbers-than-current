@@ -8,13 +8,13 @@ func smallerNumbersThanCurrent(nums []int) []int {
 	for _, val := range nums {
 		accuArray[val] += 1
 	}
-	for idx, _ := range valueArray {
+	for idx := range valueArray {
 		if idx > 0 {
 			accuArray[idx] += accuArray[idx-1]
 			valueArray[idx] = accuArray[idx-1]
 		}
 	}
-	for idx, _ := range result {
+	for idx := range result {
 		result[idx] = valueArray[nums[idx]]
 	}
 	return result
